@@ -5,6 +5,8 @@ typedef struct s_stack
 {
     int *a;
     int *b;
+    int a_size;
+    int b_size;
 }       t_stack;
 
 #endif
