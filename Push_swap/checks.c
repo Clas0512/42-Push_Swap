@@ -21,7 +21,9 @@ int ft_general_check(char *str)
 {
     int     i;
     char    c;
+    int     s;
 
+    s = 0;
     i = 0;
     while (str[i] != '\0')
     {
@@ -30,8 +32,11 @@ int ft_general_check(char *str)
             return (0);
         if ((c == '-' && !('0' <= str[i + 1] && str[i + 1] <= '9')) || (i > 0 && c == '-' && !(str[i - 1] == ' ')))
             return (0);
+        c++;
         i++;
     }
+    if (c == 0) // **************************
+        return (0); // sadece boşluk varsa kontrolü
     return (1);
 }
 
@@ -71,6 +76,8 @@ void    ft_check_arg(int ac, char **argv, t_stack *stacks)
     i = 1;
     while (i < ac)
     {
+        if (!*argv[i])
+            ft_error();
         if (!ft_general_check(argv[i]))
             ft_error();
         num_c += ft_count_of_num(argv[i], stacks, i);
@@ -122,6 +129,7 @@ void    ft_set_stack(t_stack *stacks, int ac, char **av)
     int     j;
     char    **rstr;
     int     cu;
+    int     siu;
 
     cu = stacks->a_size - 1;
     i = ac - 1;
@@ -136,6 +144,9 @@ void    ft_set_stack(t_stack *stacks, int ac, char **av)
             j--;
         }
         i--;
+        siu = -1;
+        while (rstr[++siu])
+            free(rstr[siu]);
         free(rstr);
     }
 }
