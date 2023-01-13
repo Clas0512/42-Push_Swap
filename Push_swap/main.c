@@ -1,11 +1,5 @@
 #include "push_swap.h"
 
-// void    ft_rrr(t_stack *stack)
-// {
-//     ft_rra(stack);
-//     ft_rrb(stack);
-// }
-
 void    ft_error(void)
 {
     write(2, "Error\n", 6);
@@ -69,11 +63,13 @@ int main(int ac, char **av)
     if (!ft_is_sorted(&stacks))
         exit(1);
     ft_index(&stacks);
-    for (size_t i = 0; i < stacks.a_size; i++)
-        printf("%d\n", stacks.a[i]);
-    ft_sa(&stacks);
-    printf("\n");
-    for (size_t i = 0; i < stacks.a_size; i++)
-        printf("%d\n", stacks.a[i]);
+	for (size_t i = 0; i < stacks.a_size; i++)
+		printf("%d\n", stacks.a[i]);
+	printf("\n\n\n");
+	ft_sorting(&stacks);
+	printf("\n\n\n");
+	for (size_t i = 0; i < stacks.a_size; i++)
+		printf("%d\n", stacks.a[i]);
+	
     return (0);
 }

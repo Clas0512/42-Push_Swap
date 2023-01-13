@@ -21,6 +21,7 @@ void    ft_pa(t_stack *stack)
         }
         stack->b_size--;
         stack->a_size++;
+		write(1, "pa\n", 3);
     }
 }
 
@@ -45,5 +46,6 @@ void    ft_pb(t_stack *stack)
         }
         stack->a_size--;
         stack->b_size++;
+		write(1, "pb\n", 3);
     }
 }

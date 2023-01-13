@@ -31,6 +31,8 @@ void    ft_rb(t_stack *stack);
 void    ft_ra(t_stack *stack);
 void    ft_rr(t_stack *stack);
 void    ft_set_stack(t_stack *stacks, int ac, char **av);
+void	ft_sorting(t_stack *stack);
+void	three_sort(t_stack *stack);
 long    ft_atol(char *str);
 int     ft_count_of_num(char *str, t_stack *stacks, int ac);
 int     ft_general_check(char *str);

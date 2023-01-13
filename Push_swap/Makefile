@@ -1,5 +1,6 @@
 SRC		= main.c checks.c checks_2.c r_commands.c \
-			p_commands.c rr_commands.c s_commands.c
+			p_commands.c rr_commands.c s_commands.c \
+			ft_sorting.c
 
 OBJS	= $(SRC:.c=.o)
 

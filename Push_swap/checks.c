@@ -93,5 +93,5 @@ void    ft_check_arg(int ac, char **argv, t_stack *stacks)
     if (!stacks->b)
         ft_error();
     stacks->a_size = num_c;
-    stacks->b_size = num_c;
+    stacks->b_size = 0;
 }
