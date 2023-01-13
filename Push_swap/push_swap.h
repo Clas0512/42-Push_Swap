@@ -15,13 +15,26 @@ typedef struct s_stack
     int *each_arg_c;
 }       t_stack;
 
+void    ft_index(t_stack *stacks);
 void    ft_error(void);
-int     ft_count_of_num(char *str, t_stack *stacks, int ac);
-int     ft_general_check(char *str);
 void    ft_isthr_cpy(t_stack *stacks);
 void    ft_check_arg(int ac, char **argv, t_stack *stacks);
-long    ft_atol(char *str);
+void    ft_sa(t_stack *stack);
+void    ft_sb(t_stack *stack);
+void    ft_ss(t_stack *stack);
+void    ft_pa(t_stack *stack);
+void    ft_pb(t_stack *stack);
+void    ft_rrb(t_stack *stack);
+void    ft_rra(t_stack *stack);
+void    ft_rrr(t_stack *stack);
+void    ft_rb(t_stack *stack);
+void    ft_ra(t_stack *stack);
+void    ft_rr(t_stack *stack);
 void    ft_set_stack(t_stack *stacks, int ac, char **av);
+long    ft_atol(char *str);
+int     ft_count_of_num(char *str, t_stack *stacks, int ac);
+int     ft_general_check(char *str);
+int     find_plc(int i, t_stack *stacks);
 int     ft_is_sorted(t_stack *stacks);
 
 #endif

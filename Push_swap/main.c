@@ -71,5 +71,9 @@ int main(int ac, char **av)
     ft_index(&stacks);
     for (size_t i = 0; i < stacks.a_size; i++)
         printf("%d\n", stacks.a[i]);
+    ft_sa(&stacks);
+    printf("\n");
+    for (size_t i = 0; i < stacks.a_size; i++)
+        printf("%d\n", stacks.a[i]);
     return (0);
 }

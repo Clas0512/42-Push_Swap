@@ -1,4 +1,5 @@
-SRC		= main.c checks.c
+SRC		= main.c checks.c checks_2.c r_commands.c \
+			p_commands.c rr_commands.c s_commands.c
 
 OBJS	= $(SRC:.c=.o)
 
