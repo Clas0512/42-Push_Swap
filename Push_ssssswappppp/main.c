@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/14 21:33:07 by anargul           #+#    #+#             */
+/*   Updated: 2023/01/15 00:19:26 by anargul          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_error(void)
@@ -84,5 +96,5 @@ int	main(int ac, char **av)
 	stacks.sign_size = stacks.a_size;
 	ft_index(&stacks);
 	ft_sorting(&stacks);
-	return(0);
+	return (0);
 }

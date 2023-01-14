@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checks.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/14 21:32:52 by anargul           #+#    #+#             */
+/*   Updated: 2023/01/15 00:53:19 by anargul          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_count_of_num(char *str, t_stack *stacks, int ac)
@@ -38,7 +50,7 @@ void	ft_general_check(char *str)
 		i++;
 	}
 	if (s == 0)
-		exit(1);
+		ft_error();
 }
 
 void	ft_isthr_cpy(t_stack *stacks)
