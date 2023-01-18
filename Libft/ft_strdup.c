@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 21:33:07 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/18 19:46:43 by anargul          ###   ########.fr       */
+/*   Created: 2022/07/01 21:31:23 by anargul           #+#    #+#             */
+/*   Updated: 2022/07/08 02:00:40 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error(void)
+char	*ft_strdup(const char	*str1)
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
+	size_t		len;
+	char		*str2;
 
-int	main(int ac, char **av)
-{
-	t_stacks	stacks;
-
-	if (ac == 1)
-		exit(1);
-	ft_check_arg(ac, av, &stacks);
-	ft_set_stacks(&stacks, ac, av);
-	ft_isthr_cpy(&stacks);
-	if (!ft_is_sorted(&stacks))
-		exit(1);
-	ft_index(&stacks);
-	ft_sorting(&stacks);
-	return (0);
+	len = ft_strlen(str1) + 1;
+	str2 = malloc(sizeof(char) * len);
+	if (!str2)
+		return (0);
+	return (ft_memcpy(str2, str1, len));
 }

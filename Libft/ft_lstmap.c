@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 21:33:07 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/18 19:46:43 by anargul          ###   ########.fr       */
+/*   Created: 2022/07/08 00:04:58 by anargul           #+#    #+#             */
+/*   Updated: 2022/07/08 04:16:34 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error(void)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
+	t_list	*lst_map;
+	t_list	*new;
 
-int	main(int ac, char **av)
-{
-	t_stacks	stacks;
-
-	if (ac == 1)
-		exit(1);
-	ft_check_arg(ac, av, &stacks);
-	ft_set_stacks(&stacks, ac, av);
-	ft_isthr_cpy(&stacks);
-	if (!ft_is_sorted(&stacks))
-		exit(1);
-	ft_index(&stacks);
-	ft_sorting(&stacks);
-	return (0);
+	lst_map = NULL;
+	while (lst)
+	{
+		new = ft_lstnew(f(lst->content));
+		if (new)
+			ft_lstadd_back(&lst_map, new);
+		else
+			ft_lstclear(&new, del);
+		lst = lst->next;
+	}
+	return (lst_map);
 }

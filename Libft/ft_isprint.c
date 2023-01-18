@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 21:33:07 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/18 19:46:43 by anargul          ###   ########.fr       */
+/*   Created: 2022/06/25 16:57:41 by anargul           #+#    #+#             */
+/*   Updated: 2022/07/08 00:11:20 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error(void)
+int	ft_isprint(int c)
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
-int	main(int ac, char **av)
-{
-	t_stacks	stacks;
-
-	if (ac == 1)
-		exit(1);
-	ft_check_arg(ac, av, &stacks);
-	ft_set_stacks(&stacks, ac, av);
-	ft_isthr_cpy(&stacks);
-	if (!ft_is_sorted(&stacks))
-		exit(1);
-	ft_index(&stacks);
-	ft_sorting(&stacks);
-	return (0);
+	return (32 <= c && c <= 126);
 }

@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 21:33:07 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/18 19:46:43 by anargul          ###   ########.fr       */
+/*   Created: 2022/07/02 00:45:22 by anargul           #+#    #+#             */
+/*   Updated: 2022/07/08 02:00:49 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error(void)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
+	size_t	i;
+	char	*new_s;
 
-int	main(int ac, char **av)
-{
-	t_stacks	stacks;
-
-	if (ac == 1)
-		exit(1);
-	ft_check_arg(ac, av, &stacks);
-	ft_set_stacks(&stacks, ac, av);
-	ft_isthr_cpy(&stacks);
-	if (!ft_is_sorted(&stacks))
-		exit(1);
-	ft_index(&stacks);
-	ft_sorting(&stacks);
-	return (0);
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	new_s = malloc((sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (new_s == 0)
+		return (0);
+	while (*s1)
+		new_s[i++] = *s1++;
+	while (*s2)
+		new_s[i++] = *s2++;
+	new_s[i] = 0;
+	return (new_s);
 }

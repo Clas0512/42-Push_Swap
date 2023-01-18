@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 21:33:07 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/18 19:46:43 by anargul          ###   ########.fr       */
+/*   Created: 2022/07/07 19:53:12 by anargul           #+#    #+#             */
+/*   Updated: 2022/07/07 20:08:14 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_error(void)
+t_list	*ft_lstnew(void *content)
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
+	t_list	*new;
 
-int	main(int ac, char **av)
-{
-	t_stacks	stacks;
-
-	if (ac == 1)
-		exit(1);
-	ft_check_arg(ac, av, &stacks);
-	ft_set_stacks(&stacks, ac, av);
-	ft_isthr_cpy(&stacks);
-	if (!ft_is_sorted(&stacks))
-		exit(1);
-	ft_index(&stacks);
-	ft_sorting(&stacks);
-	return (0);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (0);
+	new->content = content;
+	new->next = 0;
+	return (new);
 }

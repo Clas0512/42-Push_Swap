@@ -6,13 +6,13 @@
 #    By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 00:18:43 by anargul           #+#    #+#              #
-#    Updated: 2023/01/15 00:18:44 by anargul          ###   ########.fr        #
+#    Updated: 2023/01/18 19:44:48 by anargul          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC		= main.c checks.c checks_2.c r_commands.c \
 			p_commands.c rr_commands.c s_commands.c \
-			ft_sorting.c extra.c radix_sort.c
+			ft_sorting.c radix_sort.c index.c
 
 OBJS	= $(SRC:.c=.o)
 

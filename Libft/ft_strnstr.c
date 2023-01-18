@@ -1,48 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 21:33:17 by anargul           #+#    #+#             */
+/*   Created: 2022/06/30 04:16:01 by anargul           #+#    #+#             */
 /*   Updated: 2023/01/16 20:38:54 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	change_to_bit(t_stacks *stacks, int j)
+char	*ft_strnstr(const char *haystacks, const char *needle, size_t len)
 {
-	if (((stacks->a[0] >> j) & 1) == 0)
-		ft_pb(stacks);
-	else
-		ft_ra(stacks);
-}
+	size_t	h;
+	size_t	n;
 
-void	radix_sort(t_stacks *stacks)
-{
-	int	j;
-	int	i;
-	int	bit_size;
-	int	size;
-
-	bit_size = 8;
-	if (stacks->a_size == 100)
-		bit_size = 6;
-	i = 0;
-	j = 0;
-	while (j <= bit_size)
+	h = 0;
+	if (needle[0] == '\0')
+		return ((char *)haystacks);
+	while (haystacks[h] != '\0')
 	{
-		i = 0;
-		size = stacks->a_size;
-		while (i < size)
+		n = 0;
+		while (haystacks[h + n] == needle[n] && (h + n) < len)
 		{
-			change_to_bit(stacks, j);
-			i++;
+			if (haystacks[h + n] == '\0' && needle[n] == '\0')
+				return ((char *)&haystacks[h]);
+			n++;
 		}
-		while (stacks->b_size != 0)
-			ft_pa(stacks);
-		j++;
+		if (needle[n] == '\0')
+			return ((char *)haystacks + h);
+		h++;
 	}
+	return (0);
 }

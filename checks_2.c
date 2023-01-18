@@ -6,7 +6,7 @@
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 21:32:47 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/14 21:32:49 by anargul          ###   ########.fr       */
+/*   Updated: 2023/01/18 19:49:50 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long	ft_atol(char *str)
 {
 	int		sign;
 	int		i;
-	long	r;
+	long long int	r;
 
 	i = -1;
 	sign = 1;
@@ -40,7 +40,7 @@ long	ft_atol(char *str)
 	return (r);
 }
 
-void	ft_set_stack(t_stack *stacks, int ac, char **av)
+void	ft_set_stacks(t_stacks *stacks, int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -68,7 +68,7 @@ void	ft_set_stack(t_stack *stacks, int ac, char **av)
 	}
 }
 
-int	ft_is_sorted(t_stack *stacks)
+int	ft_is_sorted(t_stacks *stacks)
 {
 	int	i;
 

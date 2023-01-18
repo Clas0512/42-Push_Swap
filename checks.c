@@ -6,13 +6,13 @@
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 21:32:52 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/15 00:53:19 by anargul          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:39:55 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_count_of_num(char *str, t_stack *stacks, int ac)
+int	ft_count_of_num(char *str, t_stacks *stacks, int ac)
 {
 	int	i;
 	int	result;
@@ -53,7 +53,7 @@ void	ft_general_check(char *str)
 		ft_error();
 }
 
-void	ft_isthr_cpy(t_stack *stacks)
+void	ft_isthr_cpy(t_stacks *stacks)
 {
 	int	p;
 	int	i;
@@ -78,7 +78,7 @@ void	ft_isthr_cpy(t_stack *stacks)
 	}
 }
 
-void	ft_check_arg(int ac, char **argv, t_stack *stacks)
+void	ft_check_arg(int ac, char **argv, t_stacks *stacks)
 {
 	int	i;
 	int	num_c;

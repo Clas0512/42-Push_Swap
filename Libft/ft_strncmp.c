@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extra.c                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 21:32:54 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/14 21:32:55 by anargul          ###   ########.fr       */
+/*   Created: 2022/06/30 04:12:13 by anargul           #+#    #+#             */
+/*   Updated: 2022/07/08 02:01:34 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	five_sort_extra(t_stack *stack)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	ft_pb(stack);
-	three_sort(stack);
-	ft_pa(stack);
-	ft_pa(stack);
-	ft_ra(stack);
-	ft_ra(stack);
-}
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
-void	extra(t_stack *stack)
-{
-	ft_pb(stack);
-	three_sort(stack);
-	ft_rrb(stack);
-	ft_pa(stack);
-	ft_ra(stack);
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (i < n && (str1[i] || str2[i]))
+	{
+		if (str1[i] > str2[i])
+			return (1);
+		else if (str2[i] > str1[i])
+			return (-1);
+		i++;
+	}
+	return (0);
 }

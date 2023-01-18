@@ -6,53 +6,53 @@
 /*   By: anargul <anargul@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 21:33:23 by anargul           #+#    #+#             */
-/*   Updated: 2023/01/14 21:33:24 by anargul          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:38:54 by anargul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rra(t_stack *stack)
+void	ft_rra(t_stacks *stacks)
 {
 	int	i;
 	int	tmp;
 
-	if (stack->a_size > 1)
+	if (stacks->a_size > 1)
 	{
-		tmp = stack->a[stack->a_size - 1];
-		i = stack->a_size - 1;
+		tmp = stacks->a[stacks->a_size - 1];
+		i = stacks->a_size - 1;
 		while (i > 0)
 		{
-			stack->a[i] = stack->a[i - 1];
+			stacks->a[i] = stacks->a[i - 1];
 			i--;
 		}
-		stack->a[0] = tmp;
+		stacks->a[0] = tmp;
 		write(1, "rra\n", 4);
 	}
 }
 
-void	ft_rrb(t_stack *stack)
+void	ft_rrb(t_stacks *stacks)
 {
 	int	i;
 	int	tmp;
 
-	if (stack->b_size > 1)
+	if (stacks->b_size > 1)
 	{
-		tmp = stack->b[stack->b_size - 1];
-		i = stack->b_size - 1;
+		tmp = stacks->b[stacks->b_size - 1];
+		i = stacks->b_size - 1;
 		while (i > 0)
 		{
-			stack->b[i] = stack->b[i - 1];
+			stacks->b[i] = stacks->b[i - 1];
 			i--;
 		}
-		stack->b[0] = tmp;
+		stacks->b[0] = tmp;
 		write(1, "rrb\n", 4);
 	}
 }
 
-void	ft_rrr(t_stack *stack)
+void	ft_rrr(t_stacks *stacks)
 {
-	ft_rra(stack);
-	ft_rrb(stack);
+	ft_rra(stacks);
+	ft_rrb(stacks);
 	write(1, "rrr\n", 4);
 }
